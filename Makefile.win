@@ -1,0 +1,55 @@
+# Project: Bibliotheque-CAAN
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Auteur.o Categorie.o Client.o main.o Offre.o usefulFunctions.o menu.o emprunt.o Exemplaire.o Livre.o
+LINKOBJ  = Auteur.o Categorie.o Client.o main.o Offre.o usefulFunctions.o menu.o emprunt.o Exemplaire.o Livre.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Bibliotheque-CAAN.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Auteur.o: Auteur.c
+	$(CC) -c Auteur.c -o Auteur.o $(CFLAGS)
+
+Categorie.o: Categorie.c
+	$(CC) -c Categorie.c -o Categorie.o $(CFLAGS)
+
+Client.o: Client.c
+	$(CC) -c Client.c -o Client.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+Offre.o: Offre.c
+	$(CC) -c Offre.c -o Offre.o $(CFLAGS)
+
+usefulFunctions.o: usefulFunctions.c
+	$(CC) -c usefulFunctions.c -o usefulFunctions.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+emprunt.o: emprunt.c
+	$(CC) -c emprunt.c -o emprunt.o $(CFLAGS)
+
+Exemplaire.o: Exemplaire.c
+	$(CC) -c Exemplaire.c -o Exemplaire.o $(CFLAGS)
+
+Livre.o: Livre.c
+	$(CC) -c Livre.c -o Livre.o $(CFLAGS)
